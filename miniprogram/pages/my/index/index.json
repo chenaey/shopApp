@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-cell": "/vant-weapp/dist/cell/index",
+    "van-icon": "/vant-weapp/dist/icon/index"
+  },
+  "navigationBarTitleText": "我的"
+}

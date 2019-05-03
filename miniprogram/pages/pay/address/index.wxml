@@ -1,0 +1,21 @@
+<!-- <view class='wx' bindtap='fromWx'>
+  <van-cell icon='phone-circle-o' title="获取微信收获地址" is-link bind:click='onOpenPS' />
+</view> -->
+
+<view class='address-no' wx:if='{{address.length===0}}'>
+  <text>哎呀，你还没有收货地址哦</text>
+</view>
+
+<view class='address-yes' wx:if='{{address.length>0}}'>
+  <view wx:for='{{address}}' class='address-row'>
+    <view bindtap='onClickAddress' data-id='{{index}}' class='address-col'>
+      <text class='address-top'>{{item.username}},{{item.phone}}</text>
+      <text class='address-bottom'>收货地址:{{item.where+item.detailwhere}}</text>
+    </view>
+    <view class='edit' bindtap='toEdit' data-id='{{item._id}}'>
+      <van-icon name="edit" />
+    </view>
+  </view>
+</view>
+
+<view class='address-add' bindtap='onAddAddress'>新增收货地址</view>

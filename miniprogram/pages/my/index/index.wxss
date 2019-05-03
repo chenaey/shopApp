@@ -1,0 +1,73 @@
+page {
+  background: #f2f2f2;
+}
+
+button::after {
+  border: none;
+}
+
+button {
+  background-color: #fff;
+}
+
+button {
+  border-radius: 0;
+}
+
+/* .userInfo-btn {
+  background: #fff;
+  justify-content: center;
+} */
+
+.avatar {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 100%;
+}
+
+.userhead {
+  height: 320rpx;
+  display: flex;
+  background-color: #fff;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100rpx;
+  margin-bottom: 16rpx;
+}
+
+.nouser {
+  border-radius: 100%;
+  width: 150rpx;
+  height: 150rpx;
+  border: 2rpx solid #ececec;
+}
+
+.username {
+  font-size: 26rpx;
+  padding-top: 24rpx;
+}
+
+.my-order {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  justify-content: space-around;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.tow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  font-size: 20rpx;
+  align-content: center;
+}
+
+.setting {
+  margin-top: 16rpx;
+}

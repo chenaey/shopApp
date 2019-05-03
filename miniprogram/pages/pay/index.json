@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "van-submit-bar": "/vant-weapp/dist/submit-bar/index",
+    "van-card": "/vant-weapp/dist/card/index",
+    "van-cell": "/vant-weapp/dist/cell/index",
+    "van-popup": "/vant-weapp/dist/popup/index",
+    "van-cell-group": "/vant-weapp/dist/cell-group/index",
+    "van-radio": "/vant-weapp/dist/radio/index",
+    "van-radio-group": "/vant-weapp/dist/radio-group/index",
+    "van-icon": "/vant-weapp/dist/icon/index",
+    "van-field": "/vant-weapp/dist/field/index"
+  },
+  "navigationBarTitleText": "确认订单"
+}

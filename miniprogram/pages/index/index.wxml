@@ -1,0 +1,9 @@
+<!-- 三张图 -->
+
+<swiper indicator-active-color='#16b990' indicator-dots='true' autoplay='true' interval='2500' duration='50' circular='false'>
+  <block clsss="top-img" wx:for="{{imgUrl}}" wx:key="{{index}}">
+    <swiper-item>
+      <image class='top-img-one' bindtap='Navigation' data-id='{{index}}' data-imgsrc='{{item}}' src="{{item.img}}" mode='widthFix'> </image>
+    </swiper-item>
+  </block>
+</swiper>

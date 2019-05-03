@@ -1,0 +1,69 @@
+page {
+  background: #f2f2f2;
+}
+
+.address-no {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  padding-top: 260rpx;
+  padding-bottom: 260rpx;
+}
+
+.wx {
+  margin-bottom: 16rpx;
+}
+
+.address-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  position: fixed;
+  bottom: 0;
+  padding: 22rpx;
+  color: #fff;
+  width: 100%;
+  background-color: #c6ab70;
+  margin-top: 300rpx;
+}
+
+.address-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  margin-bottom: 16rpx;
+  padding: 26rpx;
+  letter-spacing: 4.8rpx;
+}
+
+.edit {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.address-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.address-yes {
+  display: flex;
+  flex-direction: column;
+  padding-top: 24rpx;
+  margin-bottom: 100rpx;
+}
+
+.address-top {
+  font-size: 26rpx;
+  font-weight: 500;
+  padding-bottom: 14rpx;
+}
+
+.address-bottom {
+  font-size: 20rpx;
+  color: #999;
+}

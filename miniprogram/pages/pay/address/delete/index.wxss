@@ -1,0 +1,34 @@
+page {
+  background: #f2f2f2;
+}
+
+.wx {
+  margin-bottom: 16rpx;
+}
+
+.delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30rpx;
+  margin-left: 24rpx;
+  margin-right: 24rpx;
+  padding: 16rpx;
+  font-size: 28rpx;
+  background-color: #fff;
+  border: 2rpx solid #ececec;
+  color: #606266;
+}
+
+.save {
+  font-size: 28rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60rpx;
+  margin-left: 24rpx;
+  margin-right: 24rpx;
+  padding: 16rpx;
+  background-color: #c6ab70;
+  color: #fff;
+}

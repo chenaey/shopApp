@@ -1,0 +1,88 @@
+page {
+  background: #f2f2f2;
+}
+
+.all-shop {
+  display: flex;
+  flex-direction: row;
+}
+
+.all-left {
+  display: flex;
+}
+
+.all-right {
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20rpx;
+}
+
+.shop-card {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx 0;
+}
+
+.shop-card-line {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid #ececec;
+}
+
+.shop-img {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 10rpx;
+}
+
+.shop-card-right {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10rpx;
+  width: 100%;
+}
+
+.all-right-title {
+  padding-top: 14rpx;
+  padding-bottom: 14rpx;
+  font-size: 28rpx;
+  align-items: center;
+  display: flex;
+}
+
+.shop-title {
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  max-width: 200px;
+  font-size: 24rpx;
+  padding-top: 4px;
+  padding-left: 4px;
+  letter-spacing: 0.5px;
+  height: 70rpx;
+}
+
+.shop-price {
+  color: #c6ab70;
+  font-size: 14px;
+  margin-left: 4px;
+  font-weight: 500;
+}
+
+.shop-bottom {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+}
+
+.add-shop-icon {
+  display: flex;
+  position: absolute;
+  right: 20rpx;
+}

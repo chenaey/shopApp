@@ -1,0 +1,92 @@
+<swiper class='swiper' indicator-active-color='#16b990' indicator-dots='true' autoplay='true' interval='2500' duration='1000' circular='false'>
+  <block wx:for='{{shopData.detailImg}}' wx:key="{{index}}">
+    <swiper-item>
+      <image class='img-one' mode='scaleToFill' src="{{item}}" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class='detail-row'>
+  <view class='detail-col'>
+    <text class='detail-title'>{{shopData.title}}</text>
+    <text class='shop-price'>￥{{shopData.price/100}}</text>
+  </view>
+  <view class='share-list'>
+    <button open-type="share">
+      <view class='add-shop-icon-list' bindtap='shareToFriend'>
+        <van-icon name="share" color='#c6ab70' size='20px' />
+        <text class='share-text'>分享</text>
+      </view>
+    </button>
+  </view>
+</view>
+
+<view class='detail-tip'>
+  <text class='pei'>配送费 ￥{{shopData.fee/100}}</text>
+  <text class='is-sell'>销量 {{shopData.sellCount}}</text>
+  <text class='less-sell'>剩余 {{shopData.lessCount}}</text>
+</view>
+<van-cell title="选择" value="{{desc}}" bindtap='onShowAddShopCart' is-link/>
+
+
+
+
+<view class='shop'>
+  <image class='shop-avator' src="../../../images/shop0.jpg" />
+  <text class='shop-name'>我的小店</text>
+  <text class='to-shop-icon' bindtap='navigToHome'>进店</text>
+</view>
+
+<view class='shop-detail'>
+  <text class='shop-detail-title'>商品详情</text>
+  <block wx:for='{{shopData.detailInfo}}' wx:key="{{index}}">
+    <image style='width:100%;' mode='widthFix' src="{{item}}" />
+  </block>
+
+</view>
+
+<van-popup show="{{ showAddShopCart }}" position="bottom" bind:close="onShowAddShopCart">
+  <view class='popup-shop'>
+    <view class='shop-row'>
+      <image src='{{shopData.img}}' class='shop-img'></image>
+      <view class='shop-col'>
+        <text class='shop-title'>{{shopData.title}}</text>
+        <text class='shop-price'>￥{{shopData.price/100}}</text>
+      </view>
+    </view>
+    <view class='select-col'>
+      <view wx:for='{{shopData.selectBox}}' wx:for-item="itemF" wx:for-index="indexF" wx:key='{{indexF}}'>
+        <view class='select-list'>
+          <view class='select-name'>{{itemF.name}}：</view>
+          <view class='select-btn-row'>
+            <view wx:for='{{itemF.select}}' wx:key='{{index}}'>
+              <view class='{{item.isSelect==true? "has-select-btn":"select-btn"}}' bindtap='showShopSelect' data-indexF='{{indexF}}' data-index='{{index}}'>{{item.type}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='shop-row'>
+      <text class='shop-num-title'>购买数量:</text>
+      <van-stepper class='shop-num' value="{{ buyCount }}" bind:change="onChangBuyCount" />
+    </view>
+    <view wx:if='{{!userInfo}}' class='btn-row'>
+      <button wx:if='{{!isOnPay}}' class='btn-getinfo-detail' open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo">加入购物车</button>
+      <button wx:if='{{isOnPay}}' class='btn-getinfo-detail' open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo">立即购买</button>
+    </view>
+
+    <view wx:if='{{userInfo}}' class='btn-row'>
+      <view wx:if='{{!isOnPay}}' class='btn' bindtap='addShopCart'>加入购物车</view>
+      <view wx:if='{{isOnPay}}' class='btn' bindtap='toPay'>立即购买</view>
+    </view>
+
+    <!-- <view class='btn' size='small' bindtap='addShowCart'>加入购物车</view> -->
+  </view>
+</van-popup>
+
+<van-goods-action size='mini'>
+  <van-goods-action-icon icon="home-o" text="首页" bind:click="navigToHome" />
+  <van-goods-action-icon icon="cart-o" text="购物车" info='{{shopCartCount}}' bind:click="toShopCart" />
+  <van-goods-action-button text="加入购物车" type="warning" bind:click="onShowAddShopCart" />
+  <van-goods-action-button size='mini' text="立即购买" bind:click="toPay" />
+</van-goods-action>

@@ -1,0 +1,67 @@
+<view class='all-shop'>
+  <view class='all-left'>
+    <van-badge-group active="{{ active }}" bind:change="onChange">
+      <view wx:for='{{leftList}}' wx:key='{{index}}'>
+        <van-badge title="{{item}}" />
+      </view>
+    </van-badge-group>
+  </view>
+
+  <scroll-view scroll-y="true" scroll-top='{{scrollTop}}' scroll-into-view='{{intoView}}' style="height: 1111rpx;" bindscrolltoupper='bindscrolltoupper' bindscrolltolower='bindscrolltolower'>
+    <view class='all-right'>
+      <view wx:for="{{shopDataList}}" wx:key='{{index}}' bindtouchmove='bindtouchmove' data-indexF='{{indexF}}' wx:for-item="itemF" wx:for-index="indexF" id='{{"index"+indexF}}'>
+        <text class='all-right-title'>{{leftList[indexF]}}</text>
+        <view wx:for="{{itemF}}" wx:key='{{index}}'>
+          <view class='{{index===itemF.length-1?"shop-card-line":"shop-card"}}'>
+            <image class='shop-img' src='{{item.img}}' bindtap='lookDetail' data-shopid='{{item._id}}'></image>
+            <view class='shop-card-right'>
+              <view class='shop-title' bindtap='lookDetail' data-shopid='{{item._id}}'>{{item.title}}</view>
+              <view class='shop-bottom'>
+                <text class='shop-price' bindtap='lookDetail' data-shopid='{{item._id}}'>￥{{item.price/100}}</text>
+                <van-icon bind:click='onShowAddShopCart' data-shopid='{{item._id}}' class='add-shop-icon' size='20px;' name="cart-circle-o" color='#c6ab70' />
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<!--添加到购物车-->
+<van-popup show="{{ showAddShopCart }}" position="bottom" bind:close="onShowAddShopCart">
+  <view class='popup-shop'>
+    <view class='shop-row'>
+      <image src='{{shopData.img}}' class='shop-img'></image>
+      <view class='shop-col'>
+        <text class='shop-title'>{{shopData.title}}</text>
+        <text class='shop-price'>￥{{shopData.price/100}}</text>
+      </view>
+    </view>
+    <view class='select-col'>
+      <view wx:for='{{shopData.selectBox}}' wx:for-item="itemF" wx:for-index="indexF" wx:key='{{indexF}}'>
+        <view class='select-list'>
+          <view class='select-name'>{{itemF.name}}：</view>
+          <view class='select-btn-row'>
+            <view wx:for='{{itemF.select}}' wx:key='{{index}}'>
+              <view class='{{item.isSelect==true? "has-select-btn":"select-btn"}}' bindtap='showShopSelect' data-indexF='{{indexF}}' data-index='{{index}}'>{{item.type}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class='shop-row'>
+      <text class='shop-num-title'>购买数量:</text>
+      <van-stepper class='shop-num' value="{{ buyCount }}" bind:change="onChangBuyCount" />
+    </view>
+     <view class='btn-row'>
+        <button class='btn-getinfo' open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo" wx:if='{{!userInfo}}'>加入购物车</button>
+        <view wx:if='{{userInfo}}' class='btn-0' bindtap='addShopCart'>加入购物车</view>
+        <view class='btn-1' bindtap='toPay'>立即购买</view>
+      </view>
+    <!-- <view class='btn-row'>
+      <view class='btn-0' bindtap='addShopCart'>加入购物车</view>
+      <view class='btn-1' bindtap='toPay'>立即购买</view>
+    </view> -->
+  </view>
+</van-popup>

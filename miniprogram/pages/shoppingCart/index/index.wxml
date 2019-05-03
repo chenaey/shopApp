@@ -1,0 +1,49 @@
+<view wx:if='{{shopCartCount===0}}'>
+  <view class='no-shop'>
+    <text class='no-shop-text-0'>购物车快饿瘪了T.T</text>
+    <text class='no-shop-text-1'>快点给我挑点宝贝</text>
+    <button size='mini' class='no-shop-btn' bindtap='toHome'>去逛逛</button>
+  </view>
+</view>
+<view wx:if='{{shopCartCount>0}}'>
+  <view class='cart-shop-top'>
+    <van-checkbox class='cart-shop-checkBox ' value="{{ allCheck}}" checked-color="#c6ab70" bind:change="onSelectAll">
+      <text> 我的小店</text>
+    </van-checkbox>
+    <view class='cart-shop-edit' bindtap='onEdit'>{{editText}}</view>
+  </view>
+
+  <view class='cart-shop-list'>
+    <view class='cart-shop-row' wx:for='{{cartData}}' wx:key='{{index}}'>
+      <van-checkbox class='cart-checkBox' value="{{ item.isCheck}}" checked-color="#c6ab70" data-index='{{index}}' bind:change="selectShop">
+      </van-checkbox>
+      <view class='cart-shop-right'>
+        <image bindtap='lookDetail' data-shopid='{{item._id}}' class='cart-img' src='{{item.img}}'></image>
+        <view class='cart-shop-right-col'>
+          <text bindtap='lookDetail' data-shopid='{{item._id}}' class='cart-top'>{{item.title}}</text>
+          <text bindtap='lookDetail' data-shopid='{{item._id}}' class='cart-center'>{{item.desc}}</text>
+          <view class='cart-bottom'>
+            <text bindtap='lookDetail' data-shopid='{{item._id}}' class='cart-price'>￥{{item.price/100}}</text>
+            <view class='cart-num'>
+              <van-stepper data-index='{{index}}' value="{{ item.buyCount }}" integer bind:change="onChangeSopNum" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if='{{!isEdit}}' class='cart-submit'>
+    <van-checkbox class='cart-checkBox ' value="{{ allCheck}}" checked-color="#c6ab70" bind:change="onSelectAll">
+      全选</van-checkbox>
+    <view class='cart-count'>合计:
+      <text style='color:#c6ab70 '>￥{{totalPrice/100}}</text>
+    </view>
+    <view bindtap='toPay' class='{{shopCount>0?"cart-pay":"cart-pay-no"}}'>结算({{shopCount}})</view>
+  </view>
+  <view wx:if='{{isEdit}}' class='cart-submit'>
+    <van-checkbox class='cart-checkBox ' value="{{ allCheck}}" checked-color="#c6ab70" bind:change="onSelectAll">
+      全选</van-checkbox>
+    <view class='cart-count '> </view>
+    <view bindtap='onDeleteShop' class='{{shopCount>0?"cart-pay":"cart-pay-no"}}'>删除</view>
+  </view>
+</view>

@@ -1,0 +1,19 @@
+page {
+  background: #f2f2f2;
+}
+
+.wx {
+  margin-bottom: 16rpx;
+}
+
+.save {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80rpx;
+  margin-left: 24rpx;
+  margin-right: 24rpx;
+  padding: 16rpx;
+  background-color: #c6ab70;
+  color: #fff;
+}

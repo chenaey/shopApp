@@ -1,0 +1,118 @@
+page {
+  background: #f2f2f2;
+}
+
+
+
+button::after {
+  border: none;
+}
+
+button {
+  background-color: #fff;
+}
+
+button {
+  border-radius: 0;
+}
+
+.swiper {
+  height: 400rpx;
+  background: #fff;
+}
+
+.top-img {
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 36rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.shop-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.shop-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 16rpx;
+  margin-left: 16rpx;
+  margin-bottom: 10px;
+}
+
+.shop-title {
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  max-width: 166px;
+  font-size: 24rpx;
+  padding-top: 8rpx;
+  padding-left: 8rpx;
+  letter-spacing: 1rpx;
+  height: 70rpx;
+}
+
+.shop-bottom {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+.shop-price {
+  color: #c6ab70;
+  font-size: 14px;
+  margin-left: 4px;
+  font-weight: 500;
+}
+
+.add-shop-icon {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+  margin-right: 6px;
+}
+
+.home-shop-img {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  width: 348rpx;
+  height: 340rpx;
+}
+
+.shop-img-three {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  width: 228rpx;
+  height: 228rpx;
+}
+
+.shop-title-three {
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  max-width: 100px;
+  font-size: 24rpx;
+  padding-top: 4px;
+  padding-left: 4px;
+  letter-spacing: 0.5px;
+  height: 70rpx;
+}

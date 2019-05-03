@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-cell": "/vant-weapp/dist/cell/index",
+    "van-popup": "/vant-weapp/dist/popup/index",
+      "van-icon": "/vant-weapp/dist/icon/index"
+  },
+  "navigationBarTitleText": "选择收货地址"
+}

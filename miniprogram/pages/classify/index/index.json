@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-badge": "/vant-weapp/dist/badge/index",
+    "van-icon": "/vant-weapp/dist/icon/index",
+    "van-badge-group": "/vant-weapp/dist/badge-group/index",
+    "van-popup": "/vant-weapp/dist/popup/index",
+    "van-stepper": "/vant-weapp/dist/stepper/index"
+  },
+  "navigationBarTitleText": "分类"
+}

@@ -1,0 +1,81 @@
+page {
+  background: #f2f2f2;
+}
+
+.select-add {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 24rpx;
+  background-color: #fff;
+  font-size: 28rpx;
+  color: #303133;
+  margin-bottom: 16rpx;
+}
+
+.popup {
+  height: 320px;
+}
+
+.address {
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx 10rpx;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.address-row {
+  display: flex;
+  flex-direction: column;
+  margin-right: 70rpx;
+}
+
+.address-top {
+  display: flex;
+  flex-direction: row;
+  font-size: 26rpx;
+  font-weight: 500;
+}
+
+.address-icon {
+  display: flex;
+  position: absolute;
+  right: 20rpx;
+}
+
+.name {
+  padding-left: 18rpx;
+}
+
+.phone {
+  display: flex;
+  position: absolute;
+  right: 70rpx;
+}
+
+.where {
+  font-size: 20rpx;
+  margin-top: 20rpx;
+  color: #999;
+  padding-left: 40rpx;
+  line-height: 30rpx;
+  letter-spacing: 3rpx;
+}
+
+.center-text {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.sure-shop {
+  margin-bottom: 16rpx;
+}
+
+.fee {
+  margin-top: 16rpx;
+  margin-bottom: 154rpx;
+}

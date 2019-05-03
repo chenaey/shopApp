@@ -1,0 +1,189 @@
+.no-shop {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 260rpx;
+}
+
+button::after {
+  border: none;
+}
+
+button {
+  background-color: #fff;
+}
+
+button {
+  border-radius: 0;
+}
+
+.no-shop-btn {
+  border: 2rpx solid #fe8332;
+  color: #fe8332;
+  margin-top: 54rpx;
+}
+
+.no-shop-text-0 {
+  font-size: 28rpx;
+  letter-spacing: 2.2rpx;
+}
+
+.no-shop-text-1 {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #9f9f9f;
+}
+
+.cart-shop-list {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 200rpx;
+}
+
+.cart-shop-top {
+  display: flex;
+  flex-direction: row;
+  height: 70rpx;
+  align-items: center;
+  align-content: center;
+  border-bottom: 2rpx solid #ececec;
+}
+
+.cart-shop-checkBox {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  padding-right: 14rpx;
+  padding-left: 14rpx;
+}
+
+.cart-shop-edit {
+  color: #7cb3ff;
+  font-size: 28rpx;
+  display: flex;
+  flex: 1;
+  padding-right: 30rpx;
+  justify-content: flex-end;
+}
+
+.cart-shop-row {
+  display: flex;
+  flex-direction: row;
+  margin-top: 16rpx;
+  height: 180rpx;
+  align-items: center;
+  border-bottom: 2rpx solid #ececec;
+}
+
+.cart-shop-right {
+  display: flex;
+  flex-direction: row;
+}
+
+.cart-shop-right-col {
+  display: flex;
+  flex-direction: column;
+  padding-left: 16rpx;
+  padding-top: 8rpx;
+  padding-bottom: 16rpx;
+}
+
+.cart-top {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 24rpx;
+  color: #262626;
+}
+
+.cart-center {
+  display: flex;
+  font-size: 20rpx;
+  padding-top: 22rpx;
+  color: #6a6a6a;
+}
+
+.cart-bottom {
+  display: flex;
+  align-items: flex-end;
+  flex: 1;
+  font-size: 26rpx;
+}
+
+.cart-price {
+  color: #c6ab70;
+}
+
+.cart-num {
+  position: absolute;
+  right: 20rpx;
+  margin-top: 20rpx;
+  color: #838383;
+}
+
+.cart-img {
+  width: 152rpx;
+  height: 152rpx;
+  border-radius: 8rpx;
+  display: flex;
+}
+
+/* 底部结算 */
+
+.cart-submit {
+  display: flex;
+  flex-direction: row;
+  height: 92rpx;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  align-items: center;
+  background-color: #fff;
+  border-top: 2rpx solid #ececec;
+}
+
+.cart-checkBox {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  padding-right: 14rpx;
+  padding-left: 14rpx;
+}
+
+.cart-count {
+  font-size: 28rpx;
+  right: 140rpx;
+  display: flex;
+  flex: 1;
+  color: #111;
+  font-weight: 600;
+  padding-right: 20rpx;
+  align-content: flex-end;
+  justify-content: flex-end;
+}
+
+.cart-pay {
+  display: flex;
+  background-color: #c6ab70;
+  padding-top: 26rpx;
+  padding-bottom: 26rpx;
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: 600;
+  width: 200rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-pay-no {
+  display: flex;
+  background-color: #e5e5e5;
+  padding-top: 26rpx;
+  padding-bottom: 26rpx;
+  color: #9e9e9e;
+  font-size: 28rpx;
+  font-weight: 600;
+  width: 200rpx;
+  justify-content: center;
+  align-items: center;
+}

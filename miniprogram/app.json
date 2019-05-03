@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/home/index/index",
+    "pages/classify/index/index",
+    "pages/shoppingCart/index/index",
+    "pages/shoppingCart/detail/index",
+    "pages/my/index/index",
+    "pages/index/index",
+    "pages/pay/index",
+    "pages/pay/address/index",
+    "pages/pay/address/add/index",
+    "pages/pay/address/delete/index"
+  ],
+  "window": {
+    "backgroundColor": "#fcfcfc",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "我的移动商城",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#d81e06",
+    "list": [
+      {
+        "pagePath": "pages/home/index/index",
+        "text": "首页",
+        "iconPath": "images/index/home.png",
+        "selectedIconPath": "images/index/@home.png"
+      },
+      {
+        "pagePath": "pages/classify/index/index",
+        "text": "分类",
+        "iconPath": "images/index/all.png",
+        "selectedIconPath": "images/index/@all.png"
+      },
+      {
+        "pagePath": "pages/shoppingCart/index/index",
+        "text": "购物车",
+        "iconPath": "images/index/cart.png",
+        "selectedIconPath": "images/index/@cart.png"
+      },
+      {
+        "pagePath": "pages/my/index/index",
+        "text": "我的",
+        "iconPath": "images/index/my.png",
+        "selectedIconPath": "images/index/@my.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

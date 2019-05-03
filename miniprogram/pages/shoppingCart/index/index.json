@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-checkbox": "/vant-weapp/dist/checkbox/index",
+    "van-checkbox-group": "/vant-weapp/dist/checkbox-group/index",
+    "van-stepper": "/vant-weapp/dist/stepper/index",
+      "van-icon": "/vant-weapp/dist/icon/index"
+  },
+  "navigationBarTitleText": "购物车"
+}

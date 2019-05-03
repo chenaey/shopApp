@@ -1,0 +1,47 @@
+<view wx:if='{{!userInfo}}' class='userhead'>
+  <text class='nouser'> </text>
+  <view>
+    <button class='userInfo-btn' open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo">
+      <text class='username'>点击显示微信头像</text>
+    </button>
+  </view>
+</view>
+
+<view wx:if='{{userInfo}}' class='userhead'>
+  <image class='avatar' src='{{userInfo.avatarUrl}}'></image>
+  <text class='username'>{{userInfo.nickName}}</text>
+</view>
+
+
+
+<van-cell bind:click='onLookMyOrder' title="我的订单" value="查看全部订单" is-link/>
+<view class='my-order' bindtap='onLookMyOrder'>
+  <view class='tow'>
+    <van-icon name="balance-o" size='50rpx' />
+    <text class='text'>待付款</text>
+  </view>
+  <view class='tow'>
+    <van-icon name="shop-o" size='50rpx' />
+    <text class='text'>待发货</text>
+  </view>
+  <view class='tow'>
+    <van-icon name="shop-collect-o" size='50rpx' />
+    <text class='text'>待收货</text>
+  </view>
+  <view class='tow'>
+    <van-icon name="todo-list-o" size='50rpx' />
+    <text class='text'>待评价</text>
+  </view>
+  <view class='tow'>
+    <van-icon name="refund-o" size='50rpx' />
+    <text class='text'>退款</text>
+  </view>
+</view>
+<view class='setting'>
+  <van-cell bind:click='onLookMyOrder' icon="gift-o" title="优惠码" is-link />
+  <van-cell bind:click='onLookShopCart' icon="cart-circle-o" title="购物车" is-link />
+</view>
+<view class='setting'>
+  <van-cell bind:click='onLookMyAddress' icon="location-o " title="收货地址" value="设置" is-link />
+  <van-cell bind:click='onLookMyOrder' icon="setting-o" title="个人设置" is-link />
+</view>

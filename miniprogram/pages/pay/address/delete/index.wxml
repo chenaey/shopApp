@@ -1,0 +1,17 @@
+
+<van-cell-group>
+  <van-field bind:change="onChangeName" value="{{ username }}" label="姓名" placeholder="收货人姓名" error />
+  <van-field bind:change="onChangePhone" value="{{ phone }}" number label="电话" placeholder="收货人手机号码" />
+  <van-field bind:change="onChangeArea" value="{{ where }}" number label="地区" placeholder="填写省 / 市 / 区" />
+  <van-field type="textarea" autosize bind:change="onChangeDetailWhere" value="{{ detailwhere }}" number label="详细地址" placeholder="街道门牌、楼层房间号等信息" />
+</van-cell-group>
+
+<view class='save' bindtap='onSave'>保存并使用</view>
+<view class='delete' bindtap='onDelete'>删除收货地址</view>
+
+<!-- 
+<van-popup show="{{ show }}" position='bottom' bind:close="onClose">
+
+  <van-area area-list="{{ areaList }}" value="110101" />
+
+</van-popup> -->

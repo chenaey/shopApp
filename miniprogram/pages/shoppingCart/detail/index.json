@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "van-icon": "/vant-weapp/dist/icon/index",
+    "van-goods-action": "/vant-weapp/dist/goods-action/index",
+    "van-goods-action-icon": "/vant-weapp/dist/goods-action-icon/index",
+    "van-goods-action-button": "/vant-weapp/dist/goods-action-button/index",
+    "van-cell": "/vant-weapp/dist/cell/index",
+    "van-cell-group": "/vant-weapp/dist/cell-group/index",
+    "van-popup": "/vant-weapp/dist/popup/index",
+    "van-radio": "/vant-weapp/dist/radio/index",
+    "van-radio-group": "/vant-weapp/dist/radio-group/index",
+    "van-stepper": "/vant-weapp/dist/stepper/index"
+  }
+}
