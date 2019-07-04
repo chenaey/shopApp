@@ -27,5 +27,7 @@ App({
   globalData: {
     httpName: "https://www.i7code.cn",
     userInfo: undefined,
+    storeName:"仲恺小店铺",
+    
   }
 })

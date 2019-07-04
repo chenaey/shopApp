@@ -14,7 +14,6 @@ Page({
     var pages = getCurrentPages();
     var currPage = pages[pages.length - 1]; //当前页面
     var prevPage = pages[pages.length - 2]; //上一个页面
-    console.log(pages)
     //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
     prevPage.setData({
       address: that.data.address[e.currentTarget.dataset.id]
@@ -22,10 +21,6 @@ Page({
     wx.navigateBack({
       delta: prevPage
     })
-
-    // wx.navigateTo({
-    //   url: "/pages/pay/index?addid=" + e.currentTarget.dataset.id,
-    // })
   },
 
   toEdit(e) {
@@ -66,7 +61,6 @@ Page({
     wx.cloud.callFunction({
       name: 'login',
     }).then(res => {
-      console.log(res.result.openid)
       const db = wx.cloud.database()
       db.collection('userData').where({
         _openid: res.result.openid
@@ -75,7 +69,6 @@ Page({
           address: res.data
         })
         wx.hideNavigationBarLoading()
-        console.log(res.data)
       })
     })
 

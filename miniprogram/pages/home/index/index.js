@@ -1,9 +1,5 @@
 // pages/home/index/index.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     userInfo: undefined,
     showAddShopCart: false,
@@ -15,13 +11,21 @@ Page({
     //单个商品
     shopData: undefined,
     buyCount: 1,
-    desc:"",
+    desc: "",
+    notice: "",
   },
   onChangBuyCount(e) {
     this.setData({
       buyCount: e.detail
     })
   },
+
+  tiss(e) {
+    wx.navigateTo({
+      url: '/pages/admin/index',
+    })
+  },
+  
   onShowAddShopCart(e) {
     var that = this
     if (this.data.showAddShopCart) {
@@ -64,15 +68,17 @@ Page({
     var that = this
     var data = that.data.shopData
     var desc = ''
-    for (var i = 0; i < data.selectBox.length; i++) {
-      for (var j = 0; j < data.selectBox[i].select.length; j++) {
-        if (data.selectBox[i].select[j].isSelect) {
-          desc += data.selectBox[i].select[j].type + " "
+    if (data.selectBox) {
+      for (var i = 0; i < data.selectBox.length; i++) {
+        for (var j = 0; j < data.selectBox[i].select.length; j++) {
+          if (data.selectBox[i].select[j].isSelect) {
+            desc += data.selectBox[i].select[j].type + " "
+          }
         }
       }
     }
     var len = desc.split(" ").length
-    if (desc === "" || len <= data.selectBox.length) {
+    if (data.selectBox && (desc === "" || len <= data.selectBox.length)) {
       wx.showToast({
         title: '请选择商品参数',
         icon: 'none'
@@ -91,15 +97,17 @@ Page({
     var that = this
     var data = that.data.shopData
     var desc = ''
-    for (var i = 0; i < data.selectBox.length; i++) {
-      for (var j = 0; j < data.selectBox[i].select.length; j++) {
-        if (data.selectBox[i].select[j].isSelect) {
-          desc += data.selectBox[i].select[j].type + " "
+    if (data.selectBox) {
+      for (var i = 0; i < data.selectBox.length; i++) {
+        for (var j = 0; j < data.selectBox[i].select.length; j++) {
+          if (data.selectBox[i].select[j].isSelect) {
+            desc += data.selectBox[i].select[j].type + " "
+          }
         }
       }
     }
     var len = desc.split(" ").length
-    if (desc === "" || len <= data.selectBox.length) {
+    if (data.selectBox && (desc === "" || len <= data.selectBox.length)) {
       wx.showToast({
         title: '请选择商品参数',
         icon: 'none'
@@ -197,7 +205,8 @@ Page({
     var that = this
     const db = wx.cloud.database()
     db.collection('shopData').where({
-      type: type
+      type: type,
+      isOnline: true
     }).get().then(res => {
       if (res.errMsg === 'collection.get:ok') {
         console.log(res.data)
@@ -223,17 +232,20 @@ Page({
       }
     })
   },
+  getNotice() {
+    var that = this
+    const db = wx.cloud.database()
+    db.collection('store').doc("96c1cbbe5cd2db280e5c03d62649befa").get().then(res => {
+      that.setData({
+        notice: res.data.notice
+      })
+    })
+  },
   onLoad: function(options) {
     var that = this
-    // var d = 'A' + new Date().getTime()
-    // this.inDa(d, '人气饮品')
-    // for (var i = 0; i < 6; i++) {
-    //   var d = 'A' + new Date().getTime()
-    //   console.log(d)
-    //   this.inDa(d, '人气饮品')
-    // }
     this.getShopData('热门推荐', 'shopDataList')
     this.getShopData('人气饮品', 'shopDataListThree')
+
     // 查看是否授权
     wx.getSetting({
       success(res) {
@@ -257,7 +269,8 @@ Page({
   },
 
   onShow: function() {
-
+    var that = this
+    that.getNotice()
   },
 
 
@@ -271,7 +284,8 @@ Page({
 
 
   onPullDownRefresh: function() {
-
+    this.getShopData('热门推荐', 'shopDataList')
+    this.getShopData('人气饮品', 'shopDataListThree')
   },
 
   bindGetUserInfo(e) {
@@ -281,7 +295,12 @@ Page({
       this.setData({
         userInfo: e.detail.userInfo
       })
-      that.addShopCart()
+      if (e.currentTarget.dataset.type === "1") {
+        that.toPay()
+      } else {
+        that.addShopCart()
+
+      }
     } else {
       wx.showToast({
         title: '加入购物车失败，未授权',

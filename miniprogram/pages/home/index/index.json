@@ -5,5 +5,6 @@
     "van-loading": "/vant-weapp/dist/loading/index",
     "van-popup": "/vant-weapp/dist/popup/index",
     "van-stepper": "/vant-weapp/dist/stepper/index"
-  }
+  },
+  "enablePullDownRefresh": true
 }

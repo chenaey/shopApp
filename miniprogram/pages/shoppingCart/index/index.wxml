@@ -25,7 +25,7 @@
           <view class='cart-bottom'>
             <text bindtap='lookDetail' data-shopid='{{item._id}}' class='cart-price'>￥{{item.price/100}}</text>
             <view class='cart-num'>
-              <van-stepper data-index='{{index}}' value="{{ item.buyCount }}" integer bind:change="onChangeSopNum" />
+              <van-stepper data-index='{{index}}' value="{{ item.buyCount }}" data-shopid='{{item.__id}}' integer bind:change="onChangeSopNum" />
             </view>
           </view>
         </view>

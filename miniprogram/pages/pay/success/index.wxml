@@ -1,0 +1,8 @@
+<view class='success'>
+  <view class='success-text'>支付金额：¥{{order.total_fee}}</view>
+  <view class='success-text'>支付金额：¥{{order.total_fee}}</view>
+  <view class='success-text'>订单状态：{{order.trade_state_desc}}</view>
+  <!-- <view>支付完成时间:{{order.time_end}}</view> -->
+  <view class='success-text'>预计40分钟后送达</view>
+  <button size='mini' bindtap='look'>查看我的订单</button>
+</view>

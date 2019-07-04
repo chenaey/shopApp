@@ -6,9 +6,13 @@
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"nodeModules": false,
+		"autoAudits": false,
+		"uglifyFileName": false,
+		"checkInvalidKey": true
 	},
-	"appid": "wx565386c7dc19dfd9",
+	"appid": "wx6a2860fd02f0ae94",
 	"projectname": "myApp",
 	"libVersion": "2.2.5",
 	"simulatorType": "wechat",
@@ -31,7 +35,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 12,
 			"list": [
 				{
 					"id": -1,
@@ -87,6 +91,40 @@
 					"name": "删除收货地址",
 					"pathName": "pages/pay/address/delete/index",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "管理员",
+					"pathName": "pages/admin/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "支付成功",
+					"pathName": "pages/pay/success/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的-我的全部订单",
+					"pathName": "pages/my/order/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的-未支付",
+					"pathName": "pages/my/unPay/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的-配送信息",
+					"pathName": "pages/my/send/index",
 					"scene": null
 				}
 			]

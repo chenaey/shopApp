@@ -41,12 +41,13 @@ page {
 
 .edit {
   display: flex;
-  flex: 1;
-  justify-content: flex-end;
+  position: absolute;
+  right: 20rpx;
 }
 
 .address-col {
   display: flex;
+  flex: 1;
   flex-direction: column;
 }
 

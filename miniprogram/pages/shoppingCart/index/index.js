@@ -2,7 +2,7 @@ const app = getApp()
 
 Page({
   data: {
-    allCheck: true,
+    allCheck: false,
     editText: "编辑",
     isEdit: false, //是否处于编辑
     cartData: [],
@@ -28,7 +28,6 @@ Page({
   },
   onDeleteShop() {
     var that = this
-
     var deleteList = []
     var data = that.data.cartData
     for (var i = 0; i < data.length; i++) {
@@ -67,11 +66,13 @@ Page({
       })
     }
   },
+
   toHome() {
     wx.switchTab({
       url: "/pages/home/index/index"
     })
   },
+
   onEdit() {
     var that = this
     if (this.data.isEdit) {
@@ -97,9 +98,19 @@ Page({
   //商品购买数量
   onChangeSopNum(e) {
     var data = this.data.cartData
+    console.log(e.currentTarget.dataset.shopid, e.detail)
     data[e.currentTarget.dataset.index].buyCount = e.detail
     this.setData({
       cartData: data
+    })
+    //更新数据库中的数量
+    const db = wx.cloud.database()
+    db.collection('shopCart').doc(e.currentTarget.dataset.shopid).update({
+      data: {
+        buyCount: e.detail
+      }
+    }).then(res => {
+      console.log(res)
     })
     this.calculatePrice(data) //调用计算价格方法
   },
@@ -204,21 +215,22 @@ Page({
           var cartData = []
           //购物车数据表中每个商品含有原来商品的json数据 => shopData
           //为了显示方便将原来的商品数据直接取出将其它的数据添加进去 desc#buyCount#isCheck
-
           for (var i = 0; i < data.length; i++) {
             data[i].shopData.desc = data[i].desc
             data[i].shopData.buyCount = data[i].buyCount
-            // data[i].shopData.isCheck = true //
             data[i].shopData.__id = data[i]._id //__id表示购物车中的商品id
             cartData.push(data[i].shopData)
           }
-          console.log(cartData)
+          wx.hideLoading()
+          var isAllCheck = cartData.every(obj => {
+            return obj.isCheck
+          })
           that.setData({
-            cartData: cartData
+            cartData: cartData,
+            allCheck: isAllCheck
           })
           that.calculatePrice(cartData)
           wx.hideNavigationBarLoading()
-          wx.hideLoading()
         } else {
           that.setData({
             cartData: []
@@ -232,6 +244,8 @@ Page({
 
     })
   },
+
+
   onShow: function() {
     this.getShopCartCount()
     this.getShopCartData()

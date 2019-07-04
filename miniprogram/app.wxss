@@ -1,5 +1,14 @@
 /**app.wxss**/
 
+.none {
+  display: flex;
+  justify-content: center;
+  font-size: 32rpx;
+  padding: 20rpx;
+  background-color: #fff;
+  align-items: center;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -82,7 +91,6 @@
   color: #fff;
   align-items: center;
   font-size: 28rpx;
-
 }
 
 .btn-1 {

@@ -15,33 +15,47 @@
 
 
 <van-cell bind:click='onLookMyOrder' title="我的订单" value="查看全部订单" is-link/>
-<view class='my-order' bindtap='onLookMyOrder'>
-  <view class='tow'>
-    <van-icon name="balance-o" size='50rpx' />
+<view class='my-order'>
+  <view class='tow' bindtap='onUnPay'>
+    <van-icon name="balance-o" info='{{needPay}}' size='50rpx' />
     <text class='text'>待付款</text>
   </view>
-  <view class='tow'>
-    <van-icon name="shop-o" size='50rpx' />
-    <text class='text'>待发货</text>
+
+  <view class='tow' bindtap='onUnSend'>
+    <van-icon name="shop-o" info='{{neeSend}}' size='50rpx' />
+    <text class='text'>待配送</text>
   </view>
-  <view class='tow'>
-    <van-icon name="shop-collect-o" size='50rpx' />
+
+  <view class='tow' bindtap='onUnPxay'>
+    <van-icon name="shop-collect-o"  size='50rpx' />
     <text class='text'>待收货</text>
   </view>
-  <view class='tow'>
+
+
+
+  <view class='tow' bindtap='onCommont'>
     <van-icon name="todo-list-o" size='50rpx' />
     <text class='text'>待评价</text>
   </view>
-  <view class='tow'>
+
+  <view class='tow' bindtap='onBack'>
     <van-icon name="refund-o" size='50rpx' />
     <text class='text'>退款</text>
   </view>
 </view>
+
+<!-- <view class='setting'>
+  <van-cell bind:click='onUnPay' icon="shop-collect-o" title="待收货" is-link />
+  <van-cell bind:click='onUnSend' icon="shop-o" title="待配送" is-link />
+  <van-cell bind:click='onBack' icon="refund-o" title="退款" is-link />
+</view>
+ -->
+
 <view class='setting'>
-  <van-cell bind:click='onLookMyOrder' icon="gift-o" title="优惠码" is-link />
+  <van-cell bind:click='onUnPxay' icon="gift-o" title="优惠码" is-link />
   <van-cell bind:click='onLookShopCart' icon="cart-circle-o" title="购物车" is-link />
 </view>
 <view class='setting'>
   <van-cell bind:click='onLookMyAddress' icon="location-o " title="收货地址" value="设置" is-link />
-  <van-cell bind:click='onLookMyOrder' icon="setting-o" title="个人设置" is-link />
+  <!-- <van-cell bind:click='onLookMyOrder' icon="setting-o" title="个人设置" is-link /> -->
 </view>

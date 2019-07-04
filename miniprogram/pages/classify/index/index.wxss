@@ -7,6 +7,13 @@ page {
   flex-direction: row;
 }
 
+.shop-title-desc {
+  font-size: 24rpx;
+  color: #606266;
+  padding-top: 10rpx;
+  padding-left: 8rpx;
+}
+
 .all-left {
   display: flex;
 }
@@ -65,7 +72,6 @@ page {
   padding-top: 4px;
   padding-left: 4px;
   letter-spacing: 0.5px;
-  height: 70rpx;
 }
 
 .shop-price {

@@ -1,0 +1,71 @@
+<van-notice-bar bind:click='onClickNotice' mode="closeable" text="{{notice}}" />
+<van-cell-group>
+  <van-field bind:change='onChangeNotice' value="{{ notice }}" placeholder="请输入内容" />
+</van-cell-group>
+<button bindtap='updatNotice'>更新通知</button>
+<button bindtap='onClose'>新增商品</button>
+
+<view class='title'>线上商品</view>
+<view class='shop-list'>
+  <view wx:for="{{shopData}}" wx:key='{{index}} '>
+    <view class='shop-card'>
+      <image bindlongtap='toDelete' data-id='{{item._id}}' class='shop-img-three' src='{{item.img}}'></image>
+      <view bindtap='lookDetail' data-id='{{item._id}}' class='shop-title-three'>{{item.title}}</view>
+      <view class='shop-bottom'>
+        <text bindtap='lookDetail' data-id='{{item._id}}' class='shop-price'>￥{{item.price/100}}</text>
+        <text class='add-shop-icon'>{{item.type}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<van-popup show="{{ showAddShop }}" position="right">
+  <view class='admin-popup'>
+    <view class='admin-title'>上传商品图片</view>
+    <view class='admin-title-left' bindtap='chooseImage'>顶部图片(建议三张)</view>
+    <view class='up-img'>
+      <block>
+        <view wx:for="{{upTopImg}}" wx:key='{{index}}'>
+          <image name='upimg' class='up-oneimg' bindtap='previewImage' data-index='{{item}}' src='{{item}}'></image>
+          <view class='delete-icon'>
+            <van-icon color='#F56C6C' name="close" size='20px' bind:click='deleteImg' data-index='{{index}}' />
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <view class='admin-title-left' bindtap='chooseImage0'>商品详情图片(建议至少一张)</view>
+    <view class='up-img'>
+      <block class='up-img'>
+        <view wx:for="{{upDetailImg}}" wx:key='{{index}}'>
+          <image name='upimg' class='up-oneimg' bindtap='previewImage0' data-index='{{item}}' src='{{item}}'></image>
+          <view class='delete-icon-detail'>
+            <van-icon color='#F56C6C' name="close" size='20px' bind:click='deleteImg0' data-index='{{index}}' />
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <view class='admin-title'>商品详细信息</view>
+    <van-cell-group>
+      <van-field bind:change="ontitle" value="{{title}}" label="商品名称" placeholder="请输入内容" />
+      <van-field bind:change="ondesc" value="{{desc}}" label="商品描述" placeholder="请输入内容" />
+      <van-field bind:change="onprice" value="{{price}}" type='number' label="商品售价" placeholder="请输入内容" />
+      <van-field bind:change="onfee" value="{{fee}}" type='number' label="配送费" placeholder="请输入内容" />
+      <van-field bind:change="onlessCount" value="{{lessCount}}" type='number' label="商品库存" placeholder="请输入内容" />
+      <van-field bind:change="ontype" value="{{type}}" label="商品类型" placeholder="请输入内容" />
+      <van-switch-cell title="立即上架" checked="{{ isOnline }}" bind:change="onClickSJ" />
+      <van-switch-cell title="商品是否多选择" checked="{{ isSelectBox }}" bind:change="isSelectBox" />
+      <view wx:if="{{isSelectBox}}">
+        <van-field bind:change='selectBoxText' value="{{ selectBoxText }}" placeholder="每一项以,隔开，第一项为名称，每一列表以#隔开" />
+      </view>
+    </van-cell-group>
+
+
+
+    <view class='admin-submit-btn' bindtap='onSubmit'>确认提交</view>
+    <view class='admin-submit-btn-close' bindtap='onClose'>关闭</view>
+
+  </view>
+</van-popup>

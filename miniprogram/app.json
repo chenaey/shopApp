@@ -4,12 +4,18 @@
     "pages/classify/index/index",
     "pages/shoppingCart/index/index",
     "pages/shoppingCart/detail/index",
-    "pages/my/index/index",
     "pages/index/index",
     "pages/pay/index",
     "pages/pay/address/index",
     "pages/pay/address/add/index",
-    "pages/pay/address/delete/index"
+    "pages/pay/address/delete/index",
+    "pages/pay/success/index",
+    "pages/admin/index",
+    "pages/my/index/index",
+    "pages/my/order/index",
+    "pages/my/unPay/index",
+    "pages/my/send/index",
+    "pages/my/unSend/index"
   ],
   "window": {
     "backgroundColor": "#fcfcfc",

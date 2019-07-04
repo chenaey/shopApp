@@ -1,0 +1,50 @@
+page {
+  background: #f2f2f2;
+}
+
+.img {
+  width: 66rpx;
+  height: 66rpx;
+  border-radius: 10rpx;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+}
+
+.every {
+  display: flex;
+  background-color: #fff;
+  flex-direction: column;
+  margin-bottom: 16rpx;
+  padding: 10rpx;
+}
+
+.name {
+  padding-left: 30rpx;
+  font-size: 36rpx;
+}
+
+.finish {
+  position: absolute;
+  right: 20rpx;
+}
+
+.body {
+  padding-left: 100rpx;
+}
+
+.price {
+  position: absolute;
+  right: 20rpx;
+  color: #f56c6c;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  color: #303133;
+  font-size: 28rpx;
+  padding-bottom: 10rpx;
+}

@@ -16,6 +16,8 @@
             <image class='shop-img' src='{{item.img}}' bindtap='lookDetail' data-shopid='{{item._id}}'></image>
             <view class='shop-card-right'>
               <view class='shop-title' bindtap='lookDetail' data-shopid='{{item._id}}'>{{item.title}}</view>
+              <view class='shop-title-desc'>{{item.descs}}</view>
+
               <view class='shop-bottom'>
                 <text class='shop-price' bindtap='lookDetail' data-shopid='{{item._id}}'>￥{{item.price/100}}</text>
                 <van-icon bind:click='onShowAddShopCart' data-shopid='{{item._id}}' class='add-shop-icon' size='20px;' name="cart-circle-o" color='#c6ab70' />
@@ -27,6 +29,8 @@
     </view>
   </scroll-view>
 </view>
+
+
 <!--添加到购物车-->
 <van-popup show="{{ showAddShopCart }}" position="bottom" bind:close="onShowAddShopCart">
   <view class='popup-shop'>
@@ -54,11 +58,13 @@
       <text class='shop-num-title'>购买数量:</text>
       <van-stepper class='shop-num' value="{{ buyCount }}" bind:change="onChangBuyCount" />
     </view>
-     <view class='btn-row'>
-        <button class='btn-getinfo' open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo" wx:if='{{!userInfo}}'>加入购物车</button>
-        <view wx:if='{{userInfo}}' class='btn-0' bindtap='addShopCart'>加入购物车</view>
-        <view class='btn-1' bindtap='toPay'>立即购买</view>
-      </view>
+    <view class='btn-row'>
+      <button class='btn-getinfo' open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo" wx:if='{{!userInfo}}'>加入购物车</button>
+      <view wx:if='{{userInfo}}' class='btn-0' bindtap='addShopCart'>加入购物车</view>
+
+      <button class='btn-getinfo-btn-1' data-type='1' open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo" wx:if='{{!userInfo}}'>立即购买</button>
+      <view class='btn-1' wx:if='{{userInfo}}' bindtap='toPay'>立即购买</view>
+    </view>
     <!-- <view class='btn-row'>
       <view class='btn-0' bindtap='addShopCart'>加入购物车</view>
       <view class='btn-1' bindtap='toPay'>立即购买</view>

@@ -40,7 +40,7 @@
   <view class='popup'>
     <text class='center-text'>配送方式</text>
 
-    <van-radio-group value="{{ radio }}" bind:change="onChange">
+    <van-radio-group value="{{ radio }}" bind:change="onChangeRadio">
       <van-cell-group>
         <van-cell title="送到宿舍" clickable data-name="送到宿舍" bind:click="onClickPS">
           <van-radio name="送到宿舍" />
@@ -50,7 +50,7 @@
         </van-cell>
       </van-cell-group>
     </van-radio-group>
-    <view class='btn' style='margin-bottom:120rpx;' size='small' bindtap='onOpenPS'>确定</view>
+    <view class='btn' size='small' bindtap='onOpenPS'>确定</view>
   </view>
 </van-popup>
 
